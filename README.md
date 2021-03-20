@@ -5,7 +5,7 @@
 ## I'm a Student, Developer, and learner!!
 
 - 🔭 I'm a learner and student at NITW persuing Computer Science
-- 🌱 I’m learning be more adaptable with situations
+- 🌱 I’m learning to be more adaptable with situations
 - 🥅 2021 Goals: Get a Software internship
 - ⚡ Fun fact: I love watching and playing cricket
 
