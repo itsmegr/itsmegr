@@ -20,7 +20,7 @@
 ### Languages and Tools:
 
 [<img align="left" alt="HTML5" width="30px" src="https://e7.pngegg.com/pngimages/46/626/png-clipart-c-logo-the-c-programming-language-computer-icons-computer-programming-source-code-programming-miscellaneous-template.png" />][linkedin]
-[<img align="left" alt="HTML5" width="30px" src="https://1000logos.net/wp-content/uploads/2020/09/Java-Logo.png"/>][linkedin]
+[<img align="left" alt="HTML5" width="30px" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/java_logo_icon_168609.png"/>][linkedin]
 [<img align="left" alt="Node.js" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" />][linkedin]
 [<img align="left" alt="SQL" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sql/sql.png" />][linkedin]
 [<img align="left" alt="MySQL" width="30px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" />][linkedin]
