@@ -16,7 +16,7 @@
 Technologies
 <br />
 - c++, java, javascript, typescript, HTML, css 
-- nodeJS, goLang, docker
+- nodeJS, goLang, docker, react, react-native, spring-boot
 
 
 <br />
