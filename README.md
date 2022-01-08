@@ -2,7 +2,7 @@
 
 - ⚡ I'm a student by profession.
 - ⚡ Developing tools that really solve problems.
-- ⚡  Fun fact: I love watching and playing cricket.
+- ⚡ I love watching and playing cricket.
 
 ### Connect with me:
 
