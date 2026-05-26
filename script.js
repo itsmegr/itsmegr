@@ -4,26 +4,26 @@ const releaseData = {
   oracle: {
     name: "Oracle Search Cloud Service",
     summary:
-      "Multi-tenant OpenSearch SaaS platform on OCI, with production ownership across scale, reliability, migrations, rate limiting, and AI-assisted observability.",
+      "Large-scale OpenSearch infrastructure on OCI, focused on reliability, automation, tenant fairness, migrations, and observability.",
     scope: "500+ clusters",
-    mode: "production ownership",
-    signature: "calm under load",
+    mode: "backend + platform",
+    signature: "reliability at scale",
   },
   takomodo: {
-    name: "TAKOMODO Agentic AI Platform",
+    name: "TAKOMODO",
     summary:
-      "A founder-style product branch: Go-native agent framework, PostgreSQL backend, Redis scheduling, retries, Dockerized deploys, and CI/CD for social moderation workflows.",
-    scope: "AI SaaS buildout",
-    mode: "team lead + builder",
-    signature: "fast shipping, durable core",
+      "An agentic AI product for social media moderation, automated replies, scheduling, and engagement tracking.",
+    scope: "AI product",
+    mode: "team lead",
+    signature: "practical AI systems",
   },
   mable: {
-    name: "Mable.AI Event Pipeline",
+    name: "Mable.AI",
     summary:
-      "Early-stage ecommerce analytics infrastructure: tracking scripts, onboarding automation, webhook integrations, Kubernetes deployments, and behavioral event delivery.",
+      "Backend systems for ecommerce event tracking, webhook automation, onboarding, and analytics delivery.",
     scope: "startup backend",
-    mode: "end-to-end ownership",
-    signature: "product sense under pressure",
+    mode: "backend ownership",
+    signature: "shipping fast",
   },
   oracleIntern: {
     name: "Oracle Visual Builder Studio CLI",
@@ -34,31 +34,31 @@ const releaseData = {
     signature: "remove repetitive work",
   },
   nit: {
-    name: "NIT Warangal Foundation",
+    name: "NIT Warangal",
     summary:
-      "Computer Science and Engineering fundamentals that shaped the first-principles approach: systems, algorithms, databases, networks, and debugging discipline.",
+      "Computer Science and Engineering foundation across algorithms, systems, databases, and networks.",
     scope: "B.Tech CSE",
     mode: "foundation",
-    signature: "curiosity compiled",
+    signature: "CS fundamentals",
   },
 };
 
 const architectureData = {
   tenants: {
-    title: "Tenant isolation as a first-class system concern",
+    title: "Tenant isolation and reliability",
     body:
-      "Large multi-tenant platforms fail in unfair ways unless they identify load, contain blast radius, and preserve quality of service across customers.",
-    metrics: ["fairness", "blast-radius control", "service stability"],
+      "I care about systems that remain fair and stable when many customers share the same infrastructure.",
+    metrics: ["fairness", "stability", "multi-tenant systems"],
     code: `if tenant.bursts():
     protect_cluster()
     preserve_fairness()
     emit_evidence()`,
   },
   guard: {
-    title: "Cluster-aware rate limiting for noisy-neighbor mitigation",
+    title: "Cluster-aware rate limiting",
     body:
-      "The guardrail understands cluster pressure, tenant behavior, and burst patterns so the platform can remain fair without turning every incident into manual traffic policing.",
-    metrics: ["Java", "traffic bursts", "resource fairness"],
+      "Built rate-limiting logic to protect OpenSearch clusters from traffic bursts and noisy-neighbor workloads.",
+    metrics: ["Java", "traffic shaping", "resource fairness"],
     code: `RateDecision decide(Tenant tenant, ClusterState state) {
   return state.isHot()
       ? limiter.shape(tenant)
@@ -66,9 +66,9 @@ const architectureData = {
 }`,
   },
   migrations: {
-    title: "Near-zero-downtime migrations as a repeatable release path",
+    title: "Near-zero-downtime migrations",
     body:
-      "Customer movement across clusters becomes safer when Cross-Cluster Replication, validation, automation, and rollback thinking are part of the migration framework.",
+      "Designed migration automation using OpenSearch Cross-Cluster Replication so customer movement across clusters is safer and repeatable.",
     metrics: ["OpenSearch CCR", "automation", "tenant mobility"],
     code: `plan = migration.createPlan(source, target)
 plan.enableReplication()
@@ -76,9 +76,9 @@ plan.validateLag()
 plan.cutTrafficWhenReady()`,
   },
   clusters: {
-    title: "OpenSearch fleet engineering at production scale",
+    title: "OpenSearch fleet engineering",
     body:
-      "500+ clusters and 100M+ daily requests require more than feature work: capacity awareness, fault tolerance, operational fixes, and sober on-call judgement.",
+      "Worked on infrastructure supporting 500+ clusters and 100M+ daily requests, with production ownership and operational fixes.",
     metrics: ["500+ clusters", "100M+ req/day", "OCI"],
     code: `while service.isLive():
     watch_slos()
@@ -86,10 +86,10 @@ plan.cutTrafficWhenReady()`,
     automate_the_next_pager()`,
   },
   observability: {
-    title: "LLM-powered RCA that cites its evidence",
+    title: "AI-assisted observability",
     body:
-      "The agent gathers metrics, logs, and cluster state, then reasons through tool calls to identify offending tenants, indexes, and failure signatures with on-call-ready context.",
-    metrics: ["3h -> 10m", "tool use", "evidence-backed RCA"],
+      "Built an LLM-powered RCA agent that uses logs, metrics, and cluster state to help diagnose production issues faster.",
+    metrics: ["3h -> 10m", "LLM tooling", "RCA"],
     code: `agent.loop([
   collectMetrics(),
   inspectLogs(),
@@ -98,9 +98,9 @@ plan.cutTrafficWhenReady()`,
 ])`,
   },
   takomodo: {
-    title: "Agentic product architecture for social moderation",
+    title: "AI product engineering",
     body:
-      "TAKOMODO translates founder energy into a product system: native Go agents, scheduling, retries, engagement tracking, and production release automation.",
+      "TAKOMODO combines Go services, PostgreSQL, Redis scheduling, and AI agents for moderation and engagement workflows.",
     metrics: ["Go", "PostgreSQL", "Redis scheduler"],
     code: `agent.respond({
   brandVoice,
@@ -112,20 +112,11 @@ plan.cutTrafficWhenReady()`,
 };
 
 const terminalCommands = [
-  "git log --graph --career --scale",
-  "kubectl get clusters --tenant-aware",
-  "deploy --strategy near-zero-downtime",
-  "agent rca --evidence metrics,logs,cluster-state",
-  "git merge branch/takomodo-agent-runtime",
-  "tail -f production-empathy.log",
-];
-
-const deployLines = [
-  "> running production empathy checks...",
-  "> guardrails: tenant fairness, rollback path, observability hooks",
-  "> synthetic load: bursty tenants, migration lag, partial failures",
-  "> ai-agent: collecting logs, metrics, cluster state snapshots",
-  "> status: shipped, watched, improved",
+  "java service --tenant-aware",
+  "go run agent-runtime",
+  "kubectl get clusters",
+  "observe logs metrics state",
+  "ship reliable backend systems",
 ];
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
@@ -313,39 +304,6 @@ function setupSkillFilters() {
   });
 }
 
-function setupPipelineProgress() {
-  const pipeline = $(".deploy-pipeline");
-  if (!pipeline) return;
-
-  if (prefersReducedMotion) {
-    pipeline.style.setProperty("--pipeline-progress", "100%");
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      pipeline.style.setProperty("--pipeline-progress", entry.isIntersecting ? "100%" : "0%");
-    },
-    { threshold: 0.42 }
-  );
-
-  observer.observe(pipeline);
-}
-
-function setupDeployLog() {
-  const log = $("#deployLog");
-  if (!log || prefersReducedMotion) return;
-
-  let index = 0;
-  window.setInterval(() => {
-    const line = document.createElement("p");
-    line.textContent = deployLines[index % deployLines.length];
-    log.appendChild(line);
-    while (log.children.length > 5) log.removeChild(log.firstElementChild);
-    index += 1;
-  }, 2100);
-}
-
 function setupCopyEmail() {
   const button = $("#copyEmail");
   if (!button) return;
@@ -500,8 +458,6 @@ setupTerminalTicker();
 setupTimelineInspector();
 setupArchitecture();
 setupSkillFilters();
-setupPipelineProgress();
-setupDeployLog();
 setupCopyEmail();
 setupNavSpy();
 setupTopologyCanvas();
