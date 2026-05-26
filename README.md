@@ -2,6 +2,10 @@
 
 A cinematic, static developer-portfolio website that presents Govind Rathore's career as a living git repository: releases, branches, commits, architecture nodes, deployment loops, and infrastructure milestones.
 
+## Live site
+
+After GitHub Pages finishes deploying, this repository can serve the portfolio as a static site.
+
 ## Run locally
 
 ```bash
@@ -15,3 +19,4 @@ Then open `http://localhost:8000`.
 - `index.html` - portfolio content and semantic structure
 - `styles.css` - dark futuristic UI, responsive layout, motion, diagrams
 - `script.js` - interactions for the timeline, architecture map, filters, terminal ticker, and topology canvas
+- `.github/workflows/pages.yml` - GitHub Pages deployment workflow
