@@ -233,7 +233,16 @@ function setupTimelineInspector() {
       card.classList.toggle("active", card.dataset.release === key);
     });
     name.textContent = data.name;
-    summary.textContent = data.summary;
+    
+    // On desktop, the sidebar inspector always displays the detailed technical bullets if they exist
+    const activeCard = cards.find((card) => card.dataset.release === key);
+    if (activeCard) {
+      const detailsEl = activeCard.querySelector(".work-details");
+      summary.innerHTML = detailsEl ? detailsEl.innerHTML : `<p>${data.summary}</p>`;
+    } else {
+      summary.textContent = data.summary;
+    }
+    
     scope.textContent = data.scope;
     mode.textContent = data.mode;
     signature.textContent = data.signature;
@@ -248,7 +257,35 @@ function setupTimelineInspector() {
         selectRelease(card.dataset.release);
       }
     });
+
+    // Wire up the inline expander button inside the card
+    const toggleBtn = card.querySelector(".detail-toggle-btn");
+    if (toggleBtn) {
+      toggleBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // Avoid triggering card selection click twice
+
+        const isExpanded = card.classList.contains("is-expanded");
+        const nextState = !isExpanded;
+
+        card.classList.toggle("is-expanded", nextState);
+        toggleBtn.setAttribute("aria-expanded", String(nextState));
+
+        const label = toggleBtn.querySelector(".toggle-label");
+        if (label) {
+          label.textContent = nextState ? "Hide details" : "Show details";
+        }
+
+        // Keep the active card state in sync
+        selectRelease(card.dataset.release);
+      });
+    }
   });
+
+  // Initialize with the active card's release info on page load
+  const activeCard = $(".commit-card.active");
+  if (activeCard) {
+    selectRelease(activeCard.dataset.release);
+  }
 }
 
 function setupArchitecture() {
