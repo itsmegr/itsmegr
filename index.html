@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Govind Rathore's developer portfolio, visualized as a living repository of distributed systems, AI agents, platform engineering, and startup product building."
+    />
+    <title>Govind Rathore | Living Repository</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23020403'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%2364f4c4' stroke-width='3'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-size='19' font-family='monospace' font-weight='700' fill='%2364f4c4'%3Egr%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true">
+      <span></span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Govind Rathore home">
+        <span class="brand-mark">gr</span>
+        <span>Govind Rathore</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#timeline">Timeline</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#lab">Startup Lab</a>
+        <a href="#arsenal">Arsenal</a>
+        <a href="#deploy">Deploy</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section-band" aria-labelledby="hero-title">
+        <canvas id="topologyCanvas" aria-hidden="true"></canvas>
+        <div class="hero-grid page-shell">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">
+              <span class="status-dot"></span>
+              main branch: production systems, AI agents, startup velocity
+            </p>
+            <h1 id="hero-title">
+              Govind Rathore
+              <span>builds systems that survive scale.</span>
+            </h1>
+            <p class="hero-lede">
+              Backend and platform engineer turning distributed systems, noisy
+              tenants, migration risk, and operational ambiguity into calm,
+              observable infrastructure. Currently engineering OpenSearch SaaS
+              at Oracle scale while building agentic AI systems through
+              TAKOMODO.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button-primary" href="#timeline">Replay the commits</a>
+              <a class="button button-secondary" href="#architecture">Inspect the system</a>
+            </div>
+            <div class="hero-command" aria-label="Live terminal narrative">
+              <span class="mono prompt">$</span>
+              <span id="terminalLine" class="mono">git log --graph --career</span>
+              <span class="terminal-caret" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <aside class="repo-card reveal" aria-label="Repository status card">
+            <div class="repo-card-header">
+              <div>
+                <p class="mono muted">repo</p>
+                <h2>career-os</h2>
+              </div>
+              <span class="pill live">live</span>
+            </div>
+            <div class="commit-graph" aria-hidden="true">
+              <svg viewBox="0 0 440 260" role="img">
+                <defs>
+                  <linearGradient id="heroLine" x1="0%" x2="100%" y1="0%" y2="0%">
+                    <stop offset="0%" stop-color="#64f4c4" />
+                    <stop offset="55%" stop-color="#7dd3fc" />
+                    <stop offset="100%" stop-color="#e7fff7" />
+                  </linearGradient>
+                </defs>
+                <path class="graph-line main-line" d="M48 38 C92 78, 110 88, 152 94 S226 96, 258 132 S330 184, 394 204" />
+                <path class="graph-line branch-line" d="M151 94 C142 145, 170 181, 230 190 S310 174, 356 132" />
+                <path class="graph-line branch-line alt" d="M259 132 C232 84, 278 52, 338 62" />
+                <g class="nodes">
+                  <circle cx="48" cy="38" r="8" />
+                  <circle cx="152" cy="94" r="8" />
+                  <circle cx="258" cy="132" r="8" />
+                  <circle cx="394" cy="204" r="9" />
+                  <circle cx="230" cy="190" r="7" />
+                  <circle cx="356" cy="132" r="7" />
+                  <circle cx="338" cy="62" r="7" />
+                </g>
+              </svg>
+            </div>
+            <div class="repo-stats">
+              <div>
+                <strong>500+</strong>
+                <span>OpenSearch clusters</span>
+              </div>
+              <div>
+                <strong>100M+</strong>
+                <span>requests / day</span>
+              </div>
+              <div>
+                <strong>10m</strong>
+                <span>AI-assisted RCA target</span>
+              </div>
+            </div>
+            <div class="repo-log mono" aria-label="Recent commits">
+              <p><span>feat</span> tenant-aware rate limiting</p>
+              <p><span>infra</span> near-zero-downtime migrations</p>
+              <p><span>ai</span> evidence-backed RCA agent</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="metrics page-shell reveal" aria-label="Production impact metrics">
+        <article>
+          <span class="mono">scale.commit</span>
+          <strong>100M+</strong>
+          <p>daily requests served across a multi-tenant OpenSearch SaaS platform.</p>
+        </article>
+        <article>
+          <span class="mono">fleet.size</span>
+          <strong>500+</strong>
+          <p>clusters operated with automation, observability, and production ownership.</p>
+        </article>
+        <article>
+          <span class="mono">mttr.patch</span>
+          <strong>3h -> 10m</strong>
+          <p>root-cause workflow compressed with an LLM-powered observability agent.</p>
+        </article>
+        <article>
+          <span class="mono">branch.mode</span>
+          <strong>Founder</strong>
+          <p>product-minded builder shipping agentic AI and event-driven systems end-to-end.</p>
+        </article>
+      </section>
+
+      <section id="timeline" class="timeline-section section-band" aria-labelledby="timeline-title">
+        <div class="page-shell split-heading reveal">
+          <div>
+            <p class="eyebrow">git timeline</p>
+            <h2 id="timeline-title">Career history as a release graph.</h2>
+          </div>
+          <p>
+            Every role is modeled as a production release: a problem space,
+            a set of merged changes, and the operational maturity left behind.
+          </p>
+        </div>
+
+        <div class="timeline-layout page-shell">
+          <div class="timeline-rail" aria-hidden="true"></div>
+          <div class="timeline-list" id="timelineList">
+            <article class="commit-card reveal active" tabindex="0" data-release="oracle">
+              <div class="commit-dot"></div>
+              <div class="commit-meta mono">
+                <span>release/oracle-search-cloud</span>
+                <span>Jun 2023 - Present</span>
+              </div>
+              <h3>Production cluster: Oracle Search Cloud Service</h3>
+              <p>
+                Developed Java, Python, and shell automation for a multi-tenant
+                OpenSearch SaaS platform on OCI, operating 500+ clusters and
+                serving 100M+ requests/day across thousands of tenants.
+              </p>
+              <ul class="commit-tags" aria-label="Oracle commits">
+                <li>feat: tenant-aware rate limiting</li>
+                <li>infra: CCR migration framework</li>
+                <li>ai: RCA agent</li>
+                <li>fix: internal OpenSearch stability</li>
+              </ul>
+            </article>
+
+            <article class="commit-card reveal" tabindex="0" data-release="takomodo">
+              <div class="commit-dot branch"></div>
+              <div class="commit-meta mono">
+                <span>branch/takomodo-agent-runtime</span>
+                <span>Feb 2025 - Present</span>
+              </div>
+              <h3>Experimental AI branch becoming main</h3>
+              <p>
+                Leading a small team building TAKOMODO, a SaaS platform for
+                automated social media replies, engagement tracking, and
+                agentic moderation workflows for digital marketing teams.
+              </p>
+              <ul class="commit-tags" aria-label="Takomodo commits">
+                <li>feat: native Go agent framework</li>
+                <li>queue: Redis scheduling and retries</li>
+                <li>deploy: Docker and CI/CD releases</li>
+                <li>data: PostgreSQL-backed product core</li>
+              </ul>
+            </article>
+
+            <article class="commit-card reveal" tabindex="0" data-release="mable">
+              <div class="commit-dot branch"></div>
+              <div class="commit-meta mono">
+                <span>branch/mable-event-pipeline</span>
+                <span>Aug 2022 - May 2023</span>
+              </div>
+              <h3>Startup event pipeline under real customer pressure</h3>
+              <p>
+                Led backend development for an early ecommerce analytics
+                startup, building event tracking, webhook automation, script
+                injection, and delivery into Google Analytics and Facebook Pixel.
+              </p>
+              <ul class="commit-tags" aria-label="Mable commits">
+                <li>event: large-scale behavior streams</li>
+                <li>k8s: Helm and Kustomize deployments</li>
+                <li>growth: self-service onboarding</li>
+                <li>product: attribution and ROAS quality</li>
+              </ul>
+            </article>
+
+            <article class="commit-card reveal" tabindex="0" data-release="oracleIntern">
+              <div class="commit-dot"></div>
+              <div class="commit-meta mono">
+                <span>tooling/vbs-cli</span>
+                <span>May 2022 - Jul 2022</span>
+              </div>
+              <h3>Developer tooling that removes onboarding friction</h3>
+              <p>
+                Built Java Picocli tooling for Oracle Visual Builder Studio,
+                automating environment setup from configuration files and
+                exposing plugins inside an existing JavaScript ecosystem.
+              </p>
+              <ul class="commit-tags" aria-label="Oracle internship commits">
+                <li>cli: repeatable environment setup</li>
+                <li>dx: faster developer workflows</li>
+                <li>plugin: Java tooling inside JS platform</li>
+              </ul>
+            </article>
+
+            <article class="commit-card reveal" tabindex="0" data-release="nit">
+              <div class="commit-dot init"></div>
+              <div class="commit-meta mono">
+                <span>init/nit-warangal</span>
+                <span>Jul 2019 - May 2023</span>
+              </div>
+              <h3>Repository initialized at NIT Warangal</h3>
+              <p>
+                B.Tech in Computer Science and Engineering. The first durable
+                primitives: algorithms, operating systems, databases, networks,
+                and the habit of reducing problems to first principles.
+              </p>
+              <ul class="commit-tags" aria-label="Education commits">
+                <li>core: CS fundamentals</li>
+                <li>systems: distributed thinking</li>
+                <li>debug: curiosity as default</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="release-inspector reveal" aria-live="polite">
+            <p class="mono muted">selected release</p>
+            <h3 id="releaseName">Oracle Search Cloud Service</h3>
+            <p id="releaseSummary">
+              Multi-tenant OpenSearch SaaS platform on OCI, with production
+              ownership across scale, reliability, migrations, rate limiting,
+              and AI-assisted observability.
+            </p>
+            <div class="inspector-grid">
+              <span>scope</span>
+              <strong id="releaseScope">500+ clusters</strong>
+              <span>mode</span>
+              <strong id="releaseMode">production ownership</strong>
+              <span>signature</span>
+              <strong id="releaseSignature">calm under load</strong>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="architecture" class="architecture page-shell" aria-labelledby="architecture-title">
+        <div class="split-heading reveal">
+          <div>
+            <p class="eyebrow">architecture view</p>
+            <h2 id="architecture-title">A production system, not a job description.</h2>
+          </div>
+          <p>
+            Click through the topology to inspect how the portfolio thinks:
+            isolation, automation, feedback loops, and evidence-backed debugging.
+          </p>
+        </div>
+
+        <div class="architecture-grid reveal">
+          <div class="system-map" role="group" aria-label="Interactive architecture diagram">
+            <svg class="map-lines" viewBox="0 0 940 520" aria-hidden="true">
+              <path d="M110 258 C210 120, 310 140, 405 238" />
+              <path d="M110 258 C215 390, 330 390, 430 292" />
+              <path d="M432 258 C520 180, 585 178, 700 238" />
+              <path d="M432 258 C522 328, 602 350, 718 292" />
+              <path d="M718 258 C800 228, 830 168, 858 100" />
+              <path d="M718 258 C804 300, 834 376, 858 436" />
+            </svg>
+            <button class="arch-node active" style="--x: 8%; --y: 45%" data-arch="tenants">
+              <span>Tenants</span>
+              <small>thousands</small>
+            </button>
+            <button class="arch-node" style="--x: 36%; --y: 22%" data-arch="guard">
+              <span>Rate Limit Guard</span>
+              <small>noisy-neighbor control</small>
+            </button>
+            <button class="arch-node" style="--x: 38%; --y: 57%" data-arch="migrations">
+              <span>Migration Framework</span>
+              <small>CCR + automation</small>
+            </button>
+            <button class="arch-node primary" style="--x: 66%; --y: 45%" data-arch="clusters">
+              <span>OpenSearch Fleet</span>
+              <small>500+ clusters</small>
+            </button>
+            <button class="arch-node" style="--x: 79%; --y: 11%" data-arch="observability">
+              <span>Observability Agent</span>
+              <small>metrics + logs + state</small>
+            </button>
+            <button class="arch-node" style="--x: 78%; --y: 80%" data-arch="takomodo">
+              <span>Agentic Product Lab</span>
+              <small>TAKOMODO</small>
+            </button>
+          </div>
+
+          <aside class="architecture-panel">
+            <p class="mono muted">inspect node</p>
+            <h3 id="archTitle">Tenant isolation as a first-class system concern</h3>
+            <p id="archBody">
+              Large multi-tenant platforms fail in unfair ways unless they are
+              designed to identify load, contain blast radius, and preserve
+              quality of service across customers.
+            </p>
+            <div class="panel-metrics" id="archMetrics">
+              <span>fairness</span>
+              <span>blast-radius control</span>
+              <span>service stability</span>
+            </div>
+            <pre class="code-window"><code id="archCode">if tenant.bursts():
+    protect_cluster()
+    preserve_fairness()
+    emit_evidence()</code></pre>
+          </aside>
+        </div>
+      </section>
+
+      <section class="agents section-band" aria-labelledby="agents-title">
+        <div class="page-shell">
+          <div class="split-heading reveal">
+            <div>
+              <p class="eyebrow">ai-native engineering</p>
+              <h2 id="agents-title">Agents that reason over production, not demos.</h2>
+            </div>
+            <p>
+              The AI layer is treated like infrastructure: tool use, retries,
+              evidence, latency, cost, and human trust are design constraints.
+            </p>
+          </div>
+
+          <div class="agent-loop reveal" aria-label="AI root cause analysis loop">
+            <article>
+              <span class="step-index mono">01</span>
+              <h3>Collect</h3>
+              <p>Pull metrics, logs, alerts, and OpenSearch cluster state snapshots.</p>
+            </article>
+            <article>
+              <span class="step-index mono">02</span>
+              <h3>Reason</h3>
+              <p>Run a multi-step tool-using loop that tests hypotheses against evidence.</p>
+            </article>
+            <article>
+              <span class="step-index mono">03</span>
+              <h3>Pinpoint</h3>
+              <p>Identify offending tenants, indexes, traffic bursts, and saturation points.</p>
+            </article>
+            <article>
+              <span class="step-index mono">04</span>
+              <h3>Act</h3>
+              <p>Produce an RCA that an on-call engineer can trust under pressure.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="lab" class="lab page-shell" aria-labelledby="lab-title">
+        <div class="split-heading reveal">
+          <div>
+            <p class="eyebrow">startup lab</p>
+            <h2 id="lab-title">Experimental branches that ship.</h2>
+          </div>
+          <p>
+            Founder energy shows up as systems that move from messy customer
+            requirements to deployed, observable software quickly.
+          </p>
+        </div>
+
+        <div class="branch-grid">
+          <article class="branch-card reveal">
+            <div class="branch-card-top">
+              <span class="mono">feature/takomodo</span>
+              <span class="pill">active</span>
+            </div>
+            <h3>Agentic moderation and engagement system</h3>
+            <p>
+              A Go-native agent framework, PostgreSQL product core, Express +
+              Redis scheduler, retries, Dockerized deployments, and CI/CD
+              release flow for social media automation.
+            </p>
+            <div class="mini-pipeline" aria-hidden="true">
+              <span>prompt</span>
+              <span>agent</span>
+              <span>policy</span>
+              <span>reply</span>
+            </div>
+          </article>
+
+          <article class="branch-card reveal">
+            <div class="branch-card-top">
+              <span class="mono">feature/mable-events</span>
+              <span class="pill">merged</span>
+            </div>
+            <h3>Event tracking for ecommerce attribution</h3>
+            <p>
+              Self-service onboarding, webhook integrations, tracking script
+              injection, and event delivery pipelines feeding analytics and ad
+              platforms with cleaner behavioral data.
+            </p>
+            <div class="mini-pipeline" aria-hidden="true">
+              <span>shop</span>
+              <span>webhook</span>
+              <span>stream</span>
+              <span>pixel</span>
+            </div>
+          </article>
+
+          <article class="branch-card reveal">
+            <div class="branch-card-top">
+              <span class="mono">tooling/vbs-cli</span>
+              <span class="pill">released</span>
+            </div>
+            <h3>Developer onboarding as a command</h3>
+            <p>
+              Java Picocli tools that turn repeat setup into configuration-led
+              automation, then surface that capability as plugins in a larger
+              JavaScript developer platform.
+            </p>
+            <div class="mini-pipeline" aria-hidden="true">
+              <span>config</span>
+              <span>cli</span>
+              <span>plugin</span>
+              <span>ready</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="pipeline section-band" aria-labelledby="pipeline-title">
+        <div class="page-shell">
+          <div class="split-heading reveal">
+            <div>
+              <p class="eyebrow">delivery loop</p>
+              <h2 id="pipeline-title">From commit to confidence.</h2>
+            </div>
+            <p>
+              Shipping is treated as a feedback system: build the path, deploy
+              safely, observe reality, and fold learning back into the platform.
+            </p>
+          </div>
+
+          <div class="deploy-pipeline reveal" aria-label="Deployment pipeline">
+            <div class="pipeline-track" aria-hidden="true"></div>
+            <article>
+              <span>01</span>
+              <h3>Design</h3>
+              <p>Model failure modes before writing the happy path.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Build</h3>
+              <p>Prefer simple primitives that are observable and easy to rollback.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Automate</h3>
+              <p>Turn repeated operational work into scripts, services, or tools.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Deploy</h3>
+              <p>Move through CI/CD, containers, Kubernetes, and production gates.</p>
+            </article>
+            <article>
+              <span>05</span>
+              <h3>Observe</h3>
+              <p>Let metrics, traces, logs, and user impact challenge assumptions.</p>
+            </article>
+          </div>
+
+          <div class="terminal-panel reveal">
+            <div class="terminal-top">
+              <span></span>
+              <span></span>
+              <span></span>
+              <p class="mono">deploy.log</p>
+            </div>
+            <div class="terminal-body mono" id="deployLog" aria-label="Deployment log">
+              <p>> running production empathy checks...</p>
+              <p>> guardrails: tenant fairness, rollback path, observability hooks</p>
+              <p>> status: shipped, watched, improved</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="arsenal" class="arsenal page-shell" aria-labelledby="arsenal-title">
+        <div class="split-heading reveal">
+          <div>
+            <p class="eyebrow">technical arsenal</p>
+            <h2 id="arsenal-title">Tooling layers, not keyword soup.</h2>
+          </div>
+          <p>
+            The stack is organized like infrastructure: languages, runtime
+            systems, platform primitives, product surfaces, and AI workflows.
+          </p>
+        </div>
+
+        <div class="filter-bar reveal" role="tablist" aria-label="Skill filters">
+          <button class="filter-chip active" role="tab" aria-selected="true" data-filter="all">All</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="platform">Platform</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="backend">Backend</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="ai">AI</button>
+          <button class="filter-chip" role="tab" aria-selected="false" data-filter="product">Product</button>
+        </div>
+
+        <div class="skill-matrix reveal" id="skillMatrix">
+          <article data-skill="backend platform">
+            <span class="mono">core.languages</span>
+            <h3>Java, Go, Python, TypeScript, C/C++, SQL</h3>
+            <p>Comfortable where backend correctness, runtime behavior, and developer velocity meet.</p>
+          </article>
+          <article data-skill="platform backend">
+            <span class="mono">distributed.systems</span>
+            <h3>OpenSearch, Elasticsearch, microservices, Kafka</h3>
+            <p>Systems thinking across traffic, state, coordination, isolation, and operational failure.</p>
+          </article>
+          <article data-skill="platform">
+            <span class="mono">infra.runtime</span>
+            <h3>Kubernetes, Helm, Kustomize, Docker, OCI, Linux</h3>
+            <p>Production-minded deployment and platform automation across cloud-native environments.</p>
+          </article>
+          <article data-skill="backend product">
+            <span class="mono">api.product</span>
+            <h3>API design, GraphQL, Express, React, Next.js</h3>
+            <p>Enough full-stack range to make infrastructure visible and useful to real users.</p>
+          </article>
+          <article data-skill="ai backend">
+            <span class="mono">agentic.workflows</span>
+            <h3>LLM tooling, RCA agents, moderation agents</h3>
+            <p>Agents designed around tool use, evidence, latency, retries, and product constraints.</p>
+          </article>
+          <article data-skill="platform product">
+            <span class="mono">engineering.operating-system</span>
+            <h3>CI/CD, observability, migrations, on-call ownership</h3>
+            <p>The practical craft of keeping software healthy after the launch announcement fades.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="philosophy section-band" aria-labelledby="philosophy-title">
+        <div class="page-shell">
+          <div class="split-heading reveal">
+            <div>
+              <p class="eyebrow">system design philosophy</p>
+              <h2 id="philosophy-title">How the repository thinks.</h2>
+            </div>
+            <p>
+              The best systems are boring in production and interesting in
+              architecture review. That is the target.
+            </p>
+          </div>
+
+          <div class="principles">
+            <article class="reveal">
+              <span class="mono">principle.01</span>
+              <h3>Make blast radius visible.</h3>
+              <p>Isolation is not only an architecture diagram; it is a debugging interface.</p>
+            </article>
+            <article class="reveal">
+              <span class="mono">principle.02</span>
+              <h3>Automate the scary path.</h3>
+              <p>Migrations, rollbacks, onboarding, and incident response deserve product-level care.</p>
+            </article>
+            <article class="reveal">
+              <span class="mono">principle.03</span>
+              <h3>Trust evidence over vibes.</h3>
+              <p>Good RCA work turns logs, metrics, and state into a story that survives scrutiny.</p>
+            </article>
+            <article class="reveal">
+              <span class="mono">principle.04</span>
+              <h3>Ship fast, keep the receipts.</h3>
+              <p>Startup speed becomes durable when every shortcut has a name, owner, and exit plan.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="deploy" class="deploy page-shell reveal" aria-labelledby="deploy-title">
+        <div class="deploy-card">
+          <p class="eyebrow">deploy target</p>
+          <h2 id="deploy-title">Looking for a builder who can own the system and the story?</h2>
+          <p>
+            I am strongest in backend architecture, distributed systems,
+            platform engineering, OpenSearch scale, and AI-native product
+            infrastructure. The sweet spot: teams building serious systems with
+            startup urgency.
+          </p>
+          <div class="deploy-actions">
+            <a class="button button-primary" href="mailto:govind.r8769@gmail.com">Email Govind</a>
+            <button class="button button-secondary" type="button" id="copyEmail">Copy email</button>
+          </div>
+          <div class="contact-strip mono" aria-label="Contact details">
+            <span>govind.r8769@gmail.com</span>
+            <span>+91 87697 85549</span>
+            <span>Hyderabad / Remote</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer page-shell">
+      <p class="mono">commit hash: calm-confidence</p>
+      <p>Built as a living repository narrative from Govind Rathore's resume.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
