@@ -5,7 +5,7 @@ const releaseData = {
     name: "Oracle Search Cloud Service",
     summary:
       "Large-scale OpenSearch infrastructure on OCI, focused on reliability, automation, tenant fairness, migrations, and observability.",
-    scope: "500+ clusters",
+    scope: "600+ clusters",
     mode: "backend + platform",
     signature: "reliability at scale",
   },
@@ -43,73 +43,6 @@ const releaseData = {
   },
 };
 
-const architectureData = {
-  tenants: {
-    title: "Tenant isolation and reliability",
-    body:
-      "I care about systems that remain fair and stable when many customers share the same infrastructure.",
-    metrics: ["fairness", "stability", "multi-tenant systems"],
-    code: `if tenant.bursts():
-    protect_cluster()
-    preserve_fairness()
-    emit_evidence()`,
-  },
-  guard: {
-    title: "Cluster-aware rate limiting",
-    body:
-      "Built rate-limiting logic to protect OpenSearch clusters from traffic bursts and noisy-neighbor workloads.",
-    metrics: ["Java", "traffic shaping", "resource fairness"],
-    code: `RateDecision decide(Tenant tenant, ClusterState state) {
-  return state.isHot()
-      ? limiter.shape(tenant)
-      : limiter.allow(tenant);
-}`,
-  },
-  migrations: {
-    title: "Near-zero-downtime migrations",
-    body:
-      "Designed migration automation using OpenSearch Cross-Cluster Replication so customer movement across clusters is safer and repeatable.",
-    metrics: ["OpenSearch CCR", "automation", "tenant mobility"],
-    code: `plan = migration.createPlan(source, target)
-plan.enableReplication()
-plan.validateLag()
-plan.cutTrafficWhenReady()`,
-  },
-  clusters: {
-    title: "OpenSearch fleet engineering",
-    body:
-      "Worked on infrastructure supporting 500+ clusters and 100M+ daily requests, with production ownership and operational fixes.",
-    metrics: ["500+ clusters", "100M+ req/day", "OCI"],
-    code: `while service.isLive():
-    watch_slos()
-    patch_failure_modes()
-    automate_the_next_pager()`,
-  },
-  observability: {
-    title: "AI-assisted observability",
-    body:
-      "Built an LLM-powered RCA agent that uses logs, metrics, and cluster state to help diagnose production issues faster.",
-    metrics: ["3h -> 10m", "LLM tooling", "RCA"],
-    code: `agent.loop([
-  collectMetrics(),
-  inspectLogs(),
-  queryClusterState(),
-  explainRootCause()
-])`,
-  },
-  takomodo: {
-    title: "AI product engineering",
-    body:
-      "TAKOMODO combines Go services, PostgreSQL, Redis scheduling, and AI agents for moderation and engagement workflows.",
-    metrics: ["Go", "PostgreSQL", "Redis scheduler"],
-    code: `agent.respond({
-  brandVoice,
-  moderationPolicy,
-  conversationContext,
-  retryBudget
-})`,
-  },
-};
 
 const terminalCommands = [
   "java service --tenant-aware",
@@ -257,28 +190,6 @@ function setupTimelineInspector() {
         selectRelease(card.dataset.release);
       }
     });
-
-    // Wire up the inline expander button inside the card
-    const toggleBtn = card.querySelector(".detail-toggle-btn");
-    if (toggleBtn) {
-      toggleBtn.addEventListener("click", (event) => {
-        event.stopPropagation(); // Avoid triggering card selection click twice
-
-        const isExpanded = card.classList.contains("is-expanded");
-        const nextState = !isExpanded;
-
-        card.classList.toggle("is-expanded", nextState);
-        toggleBtn.setAttribute("aria-expanded", String(nextState));
-
-        const label = toggleBtn.querySelector(".toggle-label");
-        if (label) {
-          label.textContent = nextState ? "Hide details" : "Show details";
-        }
-
-        // Keep the active card state in sync
-        selectRelease(card.dataset.release);
-      });
-    }
   });
 
   // Initialize with the active card's release info on page load
@@ -288,36 +199,6 @@ function setupTimelineInspector() {
   }
 }
 
-function setupArchitecture() {
-  const nodes = $$(".arch-node");
-  const title = $("#archTitle");
-  const body = $("#archBody");
-  const metrics = $("#archMetrics");
-  const code = $("#archCode");
-
-  const render = (key) => {
-    const data = architectureData[key];
-    if (!data) return;
-
-    nodes.forEach((node) => {
-      node.classList.toggle("active", node.dataset.arch === key);
-    });
-    title.textContent = data.title;
-    body.textContent = data.body;
-    metrics.replaceChildren(
-      ...data.metrics.map((metric) => {
-        const chip = document.createElement("span");
-        chip.textContent = metric;
-        return chip;
-      })
-    );
-    code.textContent = data.code;
-  };
-
-  nodes.forEach((node) => {
-    node.addEventListener("click", () => render(node.dataset.arch));
-  });
-}
 
 function setupSkillFilters() {
   const filters = $$(".filter-chip");
@@ -493,7 +374,6 @@ setupScrollProgress();
 setupCursorGlow();
 setupTerminalTicker();
 setupTimelineInspector();
-setupArchitecture();
 setupSkillFilters();
 setupCopyEmail();
 setupNavSpy();
