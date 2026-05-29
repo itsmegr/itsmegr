@@ -650,13 +650,15 @@ button {
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 2rem;
   margin-top: 4rem;
+  --rail-left: 16px;
+  --list-padding-left: 3.25rem;
 }
 
 .timeline-rail {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 16px;
+  left: var(--rail-left);
   width: 2px;
   background: var(--rail-color);
 }
@@ -664,7 +666,7 @@ button {
 .timeline-list {
   display: grid;
   gap: 1rem;
-  padding-left: 3.25rem;
+  padding-left: var(--list-padding-left);
 }
 
 .commit-card {
@@ -690,7 +692,7 @@ button {
 .commit-dot {
   position: absolute;
   top: 1.55rem;
-  left: -3.68rem;
+  left: calc(var(--rail-left) - var(--list-padding-left) - 0.5rem + 1px);
   width: 1rem;
   height: 1rem;
   border: 2px solid var(--accent);
@@ -1223,16 +1225,9 @@ button {
     padding-block: 5.4rem;
   }
 
-  .timeline-list {
-    padding-left: 2.3rem;
-  }
-
-  .timeline-rail {
-    left: 10px;
-  }
-
-  .commit-dot {
-    left: -2.95rem;
+  .timeline-layout {
+    --rail-left: 10px;
+    --list-padding-left: 2.3rem;
   }
 
 
