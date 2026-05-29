@@ -315,6 +315,14 @@ function setupTopologyCanvas() {
   const draw = () => {
     context.clearRect(0, 0, width, height);
 
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    const colors = {
+      lineColor: isDark ? "rgba(100, 244, 196, " : "rgba(15, 118, 110, ",
+      nodeGlow: isDark ? "rgba(100, 244, 196, " : "rgba(15, 118, 110, ",
+      nodeColor: isDark ? "#64f4c4" : "#0f766e",
+      nodeCore: isDark ? "#f1fff8" : "#0f172a"
+    };
+
     nodes.forEach((node) => {
       node.x += node.vx;
       node.y += node.vy;
@@ -334,7 +342,7 @@ function setupTopologyCanvas() {
 
         if (distance < 155) {
           const alpha = (1 - distance / 155) * 0.22;
-          context.strokeStyle = `rgba(118, 245, 207, ${alpha})`;
+          context.strokeStyle = `${colors.lineColor}${alpha})`;
           context.lineWidth = 1;
           context.beginPath();
           context.moveTo(ax, ay);
@@ -348,14 +356,14 @@ function setupTopologyCanvas() {
       const x = node.x * width;
       const y = node.y * height;
       const gradient = context.createRadialGradient(x, y, 0, x, y, 18);
-      gradient.addColorStop(0, "rgba(100, 244, 196, 0.9)");
-      gradient.addColorStop(1, "rgba(100, 244, 196, 0)");
+      gradient.addColorStop(0, `${colors.nodeGlow}0.9)`);
+      gradient.addColorStop(1, `${colors.nodeGlow}0)`);
       context.fillStyle = gradient;
       context.beginPath();
       context.arc(x, y, 18, 0, Math.PI * 2);
       context.fill();
 
-      context.fillStyle = node.r > 2 ? "#f1fff8" : "#64f4c4";
+      context.fillStyle = node.r > 2 ? colors.nodeCore : colors.nodeColor;
       context.beginPath();
       context.arc(x, y, node.r, 0, Math.PI * 2);
       context.fill();
@@ -369,6 +377,32 @@ function setupTopologyCanvas() {
   window.addEventListener("resize", resize);
 }
 
+function setupThemeToggle() {
+  const toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
+
+  const getSavedTheme = () => {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved;
+    // Check system preference
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  };
+
+  const setTheme = (theme) => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  };
+
+  // Initialize
+  setTheme(getSavedTheme());
+
+  toggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    setTheme(current === "light" ? "dark" : "light");
+  });
+}
+
+setupThemeToggle();
 setupReveal();
 setupScrollProgress();
 setupCursorGlow();

@@ -1,4 +1,57 @@
 :root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --bg-2: #f1f5f9;
+  --panel: rgba(255, 255, 255, 0.76);
+  --panel-solid: #ffffff;
+  --panel-strong: #e2e8f0;
+  --line: rgba(15, 118, 110, 0.1);
+  --line-strong: rgba(15, 118, 110, 0.2);
+  --line-faint: rgba(15, 118, 110, 0.05);
+  --text: #0f172a;
+  --muted: #475569;
+  --faint: #64748b;
+  --accent: #0f766e;
+  --accent-2: #4f46e5;
+  --accent-3: #0f172a;
+  --danger-soft: #e11d48;
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.03);
+  --radius: 8px;
+  --mono: "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Theme-specific background and animation tokens */
+  --body-grad-1: rgba(13, 148, 136, 0.06);
+  --body-grad-2: rgba(79, 70, 229, 0.05);
+  --body-grad-bg: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 44%, #f8fafc 100%);
+  --grid-color: rgba(15, 118, 110, 0.035);
+  --glow-color-1: rgba(79, 70, 229, 0.05);
+  --glow-color-2: rgba(13, 148, 136, 0.03);
+  --noise-opacity: 0.04;
+  
+  --btn-primary-bg: linear-gradient(135deg, var(--accent), var(--accent-2));
+  --btn-primary-text: #ffffff;
+  --btn-primary-shadow: rgba(13, 148, 136, 0.2);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.6);
+  --btn-secondary-hover: rgba(15, 118, 110, 0.08);
+
+  --repo-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.9)), radial-gradient(circle at top right, rgba(79, 70, 229, 0.05), transparent 18rem);
+  --repo-dot-shadow: 0 0 0 8px rgba(13, 148, 136, 0.08), 0 0 22px rgba(13, 148, 136, 0.28);
+  --repo-dot-shadow-branch: 0 0 0 8px rgba(79, 70, 229, 0.08), 0 0 22px rgba(79, 70, 229, 0.24);
+
+  --card-active-bg: rgba(255, 255, 255, 0.94);
+  --card-active-border: rgba(13, 148, 136, 0.38);
+
+  --metrics-panel-bg: rgba(255, 255, 255, 0.88);
+  --rail-color: linear-gradient(180deg, transparent, rgba(13, 148, 136, 0.3), rgba(79, 70, 229, 0.2), transparent);
+
+  --release-inspector-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 250, 252, 0.92)), radial-gradient(circle at right top, rgba(13, 148, 136, 0.06), transparent 14rem);
+
+  --featured-project-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95)), radial-gradient(circle at top right, rgba(79, 70, 229, 0.04), transparent 22rem), radial-gradient(circle at top left, rgba(13, 148, 136, 0.04), transparent 22rem);
+  --canvas-opacity: 0.35;
+}
+
+[data-theme="dark"] {
   color-scheme: dark;
   --bg: #020403;
   --bg-2: #05100d;
@@ -7,6 +60,7 @@
   --panel-strong: #0b1814;
   --line: rgba(137, 255, 219, 0.16);
   --line-strong: rgba(137, 255, 219, 0.32);
+  --line-faint: rgba(137, 255, 219, 0.08);
   --text: #effff9;
   --muted: #a9c2ba;
   --faint: #6d827b;
@@ -15,9 +69,35 @@
   --accent-3: #f1fff8;
   --danger-soft: #ff7f9a;
   --shadow: 0 28px 90px rgba(0, 0, 0, 0.44);
-  --radius: 8px;
-  --mono: "SFMono-Regular", "Cascadia Code", "JetBrains Mono", Menlo, Consolas, monospace;
-  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --body-grad-1: rgba(100, 244, 196, 0.12);
+  --body-grad-2: rgba(125, 211, 252, 0.1);
+  --body-grad-bg: linear-gradient(180deg, #020403 0%, #030806 44%, #020403 100%);
+  --grid-color: rgba(137, 255, 219, 0.05);
+  --glow-color-1: rgba(100, 244, 196, 0.14);
+  --glow-color-2: rgba(125, 211, 252, 0.06);
+  --noise-opacity: 0.14;
+
+  --btn-primary-bg: linear-gradient(135deg, rgba(100, 244, 196, 0.92), rgba(125, 211, 252, 0.86));
+  --btn-primary-text: #02100b;
+  --btn-primary-shadow: rgba(100, 244, 196, 0.18);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.045);
+  --btn-secondary-hover: rgba(137, 255, 219, 0.08);
+
+  --repo-card-bg: linear-gradient(180deg, rgba(10, 26, 21, 0.9), rgba(4, 12, 10, 0.86)), radial-gradient(circle at top right, rgba(125, 211, 252, 0.13), transparent 18rem);
+  --repo-dot-shadow: 0 0 0 8px rgba(100, 244, 196, 0.07), 0 0 22px rgba(100, 244, 196, 0.42);
+  --repo-dot-shadow-branch: 0 0 0 8px rgba(125, 211, 252, 0.07), 0 0 22px rgba(125, 211, 252, 0.36);
+
+  --card-active-bg: rgba(10, 25, 20, 0.86);
+  --card-active-border: rgba(100, 244, 196, 0.42);
+
+  --metrics-panel-bg: rgba(7, 17, 14, 0.92);
+  --rail-color: linear-gradient(180deg, transparent, rgba(100, 244, 196, 0.48), rgba(125, 211, 252, 0.38), transparent);
+
+  --release-inspector-bg: linear-gradient(180deg, rgba(10, 24, 20, 0.9), rgba(5, 13, 10, 0.88)), radial-gradient(circle at right top, rgba(100, 244, 196, 0.12), transparent 14rem);
+
+  --featured-project-bg: linear-gradient(180deg, rgba(8, 19, 15, 0.9), rgba(4, 10, 8, 0.9)), radial-gradient(circle at top right, rgba(125, 211, 252, 0.08), transparent 22rem), radial-gradient(circle at top left, rgba(100, 244, 196, 0.06), transparent 22rem);
+  --canvas-opacity: 0.62;
 }
 
 * {
@@ -36,9 +116,9 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 18% 10%, rgba(100, 244, 196, 0.12), transparent 28rem),
-    radial-gradient(circle at 78% 5%, rgba(125, 211, 252, 0.1), transparent 30rem),
-    linear-gradient(180deg, #020403 0%, #030806 44%, #020403 100%);
+    radial-gradient(circle at 18% 10%, var(--body-grad-1), transparent 28rem),
+    radial-gradient(circle at 78% 5%, var(--body-grad-2), transparent 30rem),
+    var(--body-grad-bg);
   color: var(--text);
   font-family: var(--sans);
   letter-spacing: 0;
@@ -51,8 +131,8 @@ body::before {
   z-index: -3;
   content: "";
   background-image:
-    linear-gradient(rgba(137, 255, 219, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(137, 255, 219, 0.05) 1px, transparent 1px);
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 78px 78px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), transparent 72%);
 }
@@ -63,7 +143,7 @@ body::after {
   z-index: -2;
   height: 34vh;
   content: "";
-  background: linear-gradient(180deg, transparent, rgba(100, 244, 196, 0.04));
+  background: linear-gradient(180deg, transparent, var(--body-grad-1));
   pointer-events: none;
 }
 
@@ -84,7 +164,7 @@ button {
 }
 
 ::selection {
-  background: rgba(100, 244, 196, 0.28);
+  background: var(--selection-bg);
   color: var(--text);
 }
 
@@ -93,7 +173,7 @@ button {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.14;
+  opacity: var(--noise-opacity);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.45'/%3E%3C/svg%3E");
 }
 
@@ -106,11 +186,15 @@ button {
   height: 34rem;
   border-radius: 999px;
   background:
-    radial-gradient(circle, rgba(100, 244, 196, 0.14), rgba(125, 211, 252, 0.06) 38%, transparent 68%);
+    radial-gradient(circle, var(--glow-color-1), var(--glow-color-2) 38%, transparent 68%);
   transform: translate3d(-50%, -50%, 0);
   pointer-events: none;
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   opacity: 0.8;
+}
+
+[data-theme="dark"] .cursor-glow {
+  mix-blend-mode: screen;
 }
 
 .scroll-progress {
@@ -118,7 +202,7 @@ button {
   inset: 0 0 auto;
   z-index: 30;
   height: 2px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--line-faint);
 }
 
 .scroll-progress span {
@@ -126,7 +210,7 @@ button {
   width: 0;
   height: 100%;
   background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
-  box-shadow: 0 0 22px rgba(100, 244, 196, 0.5);
+  box-shadow: 0 0 22px var(--accent);
 }
 
 .page-shell {
@@ -136,11 +220,11 @@ button {
 
 .section-band {
   position: relative;
-  border-block: 1px solid rgba(137, 255, 219, 0.08);
+  border-block: 1px solid var(--line);
   background:
-    linear-gradient(180deg, rgba(4, 12, 10, 0.78), rgba(2, 4, 3, 0.38)),
-    radial-gradient(circle at 10% 12%, rgba(100, 244, 196, 0.08), transparent 24rem),
-    radial-gradient(circle at 90% 70%, rgba(125, 211, 252, 0.07), transparent 28rem);
+    linear-gradient(180deg, var(--panel), var(--bg-2)),
+    radial-gradient(circle at 10% 12%, var(--glow-color-1), transparent 24rem),
+    radial-gradient(circle at 90% 70%, var(--glow-color-2), transparent 28rem);
 }
 
 .mono {
@@ -167,7 +251,7 @@ button {
   height: 0.55rem;
   border-radius: 999px;
   background: var(--accent);
-  box-shadow: 0 0 0 7px rgba(100, 244, 196, 0.08), 0 0 28px rgba(100, 244, 196, 0.8);
+  box-shadow: 0 0 0 7px var(--body-grad-1), 0 0 28px var(--accent);
 }
 
 .site-header {
@@ -180,10 +264,10 @@ button {
   justify-content: space-between;
   width: min(1180px, calc(100% - 40px));
   padding: 0.55rem;
-  border: 1px solid rgba(137, 255, 219, 0.14);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(2, 7, 5, 0.72);
-  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.26);
+  background: var(--panel);
+  box-shadow: var(--shadow);
   backdrop-filter: blur(20px);
   transform: translateX(-50%);
 }
@@ -203,9 +287,9 @@ button {
   width: 2rem;
   height: 2rem;
   place-items: center;
-  border: 1px solid rgba(100, 244, 196, 0.34);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: linear-gradient(135deg, rgba(100, 244, 196, 0.16), rgba(125, 211, 252, 0.08));
+  background: linear-gradient(135deg, var(--body-grad-1), var(--body-grad-2));
   color: var(--accent);
   font-family: var(--mono);
   font-size: 0.8rem;
@@ -227,7 +311,7 @@ button {
 
 .site-nav a:hover,
 .site-nav a.active {
-  background: rgba(137, 255, 219, 0.08);
+  background: var(--btn-secondary-hover);
   color: var(--text);
 }
 
@@ -267,7 +351,7 @@ button {
 .hero-copy h1 span {
   display: block;
   margin-top: 0.45rem;
-  background: linear-gradient(90deg, var(--text), #b9fff0 48%, var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   background-clip: text;
   color: transparent;
 }
@@ -305,22 +389,22 @@ button {
 }
 
 .button-primary {
-  border-color: rgba(100, 244, 196, 0.46);
-  background: linear-gradient(135deg, rgba(100, 244, 196, 0.92), rgba(125, 211, 252, 0.86));
-  color: #02100b;
+  border-color: var(--line-strong);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   font-weight: 800;
-  box-shadow: 0 14px 44px rgba(100, 244, 196, 0.18);
+  box-shadow: 0 14px 44px var(--btn-primary-shadow);
 }
 
 .button-secondary {
-  border-color: rgba(137, 255, 219, 0.16);
-  background: rgba(255, 255, 255, 0.045);
+  border-color: var(--line);
+  background: var(--btn-secondary-bg);
   color: var(--text);
 }
 
 .button-secondary:hover {
-  border-color: rgba(137, 255, 219, 0.34);
-  background: rgba(137, 255, 219, 0.08);
+  border-color: var(--line-strong);
+  background: var(--btn-secondary-hover);
 }
 
 .hero-command {
@@ -330,11 +414,11 @@ button {
   min-height: 3.5rem;
   margin-top: 2rem;
   padding: 0.8rem 1rem;
-  border: 1px solid rgba(137, 255, 219, 0.14);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(1, 7, 5, 0.62);
+  background: var(--bg-2);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
-  color: #d9fff3;
+  color: var(--text);
 }
 
 .prompt {
@@ -353,11 +437,9 @@ button {
 .repo-card {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(137, 255, 219, 0.16);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background:
-    linear-gradient(180deg, rgba(10, 26, 21, 0.9), rgba(4, 12, 10, 0.86)),
-    radial-gradient(circle at top right, rgba(125, 211, 252, 0.13), transparent 18rem);
+  background: var(--repo-card-bg);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
 }
@@ -379,7 +461,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 1.35rem;
-  border-bottom: 1px solid rgba(137, 255, 219, 0.1);
+  border-bottom: 1px solid var(--line);
 }
 
 .repo-card h2,
@@ -398,9 +480,9 @@ button {
   gap: 0.45rem;
   min-height: 1.7rem;
   padding: 0.2rem 0.62rem;
-  border: 1px solid rgba(137, 255, 219, 0.18);
+  border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: rgba(137, 255, 219, 0.06);
+  background: var(--line-faint);
   color: var(--accent);
   font-family: var(--mono);
   font-size: 0.72rem;
@@ -435,25 +517,26 @@ button {
 }
 
 .branch-line {
-  stroke: rgba(125, 211, 252, 0.72);
+  stroke: var(--accent-2);
 }
 
 .branch-line.alt {
-  stroke: rgba(241, 255, 248, 0.6);
+  stroke: var(--accent-3);
+  opacity: 0.6;
 }
 
 .nodes circle {
-  fill: #08120f;
+  fill: var(--bg);
   stroke: var(--accent);
   stroke-width: 4;
-  filter: drop-shadow(0 0 11px rgba(100, 244, 196, 0.5));
+  filter: drop-shadow(0 0 11px var(--glow-color-1));
 }
 
 .repo-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid rgba(137, 255, 219, 0.1);
-  border-bottom: 1px solid rgba(137, 255, 219, 0.1);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 .repo-stats div {
@@ -461,7 +544,7 @@ button {
 }
 
 .repo-stats div + div {
-  border-left: 1px solid rgba(137, 255, 219, 0.1);
+  border-left: 1px solid var(--line);
 }
 
 .repo-stats strong {
@@ -504,16 +587,16 @@ button {
   position: relative;
   z-index: 2;
   overflow: hidden;
-  border: 1px solid rgba(137, 255, 219, 0.12);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(137, 255, 219, 0.12);
+  background: var(--line);
   box-shadow: var(--shadow);
 }
 
 .metrics article {
   min-height: 13.5rem;
   padding: 1.35rem;
-  background: rgba(7, 17, 14, 0.92);
+  background: var(--metrics-panel-bg);
 }
 
 .metrics span {
@@ -575,7 +658,7 @@ button {
   bottom: 0;
   left: 16px;
   width: 2px;
-  background: linear-gradient(180deg, transparent, rgba(100, 244, 196, 0.48), rgba(125, 211, 252, 0.38), transparent);
+  background: var(--rail-color);
 }
 
 .timeline-list {
@@ -587,10 +670,10 @@ button {
 .commit-card {
   position: relative;
   padding: 1.35rem;
-  border: 1px solid rgba(137, 255, 219, 0.12);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(6, 15, 12, 0.72);
-  box-shadow: 0 16px 52px rgba(0, 0, 0, 0.18);
+  background: var(--panel);
+  box-shadow: var(--shadow);
   cursor: pointer;
   transition: transform 200ms ease, border-color 200ms ease, background 200ms ease;
 }
@@ -598,8 +681,8 @@ button {
 .commit-card:hover,
 .commit-card:focus-visible,
 .commit-card.active {
-  border-color: rgba(100, 244, 196, 0.42);
-  background: rgba(10, 25, 20, 0.86);
+  border-color: var(--card-active-border);
+  background: var(--card-active-bg);
   transform: translateY(-2px);
   outline: none;
 }
@@ -613,12 +696,12 @@ button {
   border: 2px solid var(--accent);
   border-radius: 999px;
   background: var(--bg);
-  box-shadow: 0 0 0 8px rgba(100, 244, 196, 0.07), 0 0 22px rgba(100, 244, 196, 0.42);
+  box-shadow: var(--repo-dot-shadow);
 }
 
 .commit-dot.branch {
   border-color: var(--accent-2);
-  box-shadow: 0 0 0 8px rgba(125, 211, 252, 0.07), 0 0 22px rgba(125, 211, 252, 0.36);
+  box-shadow: var(--repo-dot-shadow-branch);
 }
 
 .commit-dot.init {
@@ -656,10 +739,10 @@ button {
 
 .commit-tags li {
   padding: 0.42rem 0.58rem;
-  border: 1px solid rgba(137, 255, 219, 0.12);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(137, 255, 219, 0.045);
-  color: #d9fff3;
+  background: var(--line-faint);
+  color: var(--text);
   font-family: var(--mono);
   font-size: 0.72rem;
 }
@@ -669,11 +752,9 @@ button {
   top: 6.2rem;
   height: fit-content;
   padding: 1.25rem;
-  border: 1px solid rgba(137, 255, 219, 0.14);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background:
-    linear-gradient(180deg, rgba(10, 24, 20, 0.9), rgba(5, 13, 10, 0.88)),
-    radial-gradient(circle at right top, rgba(100, 244, 196, 0.12), transparent 14rem);
+  background: var(--release-inspector-bg);
   box-shadow: var(--shadow);
 }
 
@@ -694,7 +775,7 @@ button {
   gap: 0.8rem 1rem;
   margin-top: 1.2rem;
   padding-top: 1.2rem;
-  border-top: 1px solid rgba(137, 255, 219, 0.12);
+  border-top: 1px solid var(--line);
 }
 
 .inspector-grid span {
@@ -713,16 +794,11 @@ button {
   padding: 8rem 0;
 }
 
-
-
 .featured-project {
   margin-top: 3rem;
-  border: 1px solid rgba(137, 255, 219, 0.14);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background:
-    linear-gradient(180deg, rgba(8, 19, 15, 0.9), rgba(4, 10, 8, 0.9)),
-    radial-gradient(circle at top right, rgba(125, 211, 252, 0.08), transparent 22rem),
-    radial-gradient(circle at top left, rgba(100, 244, 196, 0.06), transparent 22rem);
+  background: var(--featured-project-bg);
   padding: clamp(1.5rem, 4vw, 3rem);
   box-shadow: var(--shadow);
 }
@@ -731,7 +807,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(137, 255, 219, 0.08);
+  border-bottom: 1px solid var(--line);
   padding-bottom: 1.25rem;
   margin-bottom: 2rem;
 }
@@ -779,16 +855,16 @@ button {
 
 .project-tech-tags span {
   padding: 0.35rem 0.65rem;
-  border: 1px solid rgba(137, 255, 219, 0.12);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(137, 255, 219, 0.04);
-  color: #dffff5;
+  background: var(--line-faint);
+  color: var(--text);
   font-family: var(--mono);
   font-size: 0.72rem;
 }
 
 .project-architecture-mini {
-  border-left: 1px solid rgba(137, 255, 219, 0.08);
+  border-left: 1px solid var(--line);
   padding-left: clamp(1.5rem, 3vw, 2.5rem);
 }
 
@@ -810,8 +886,8 @@ button {
   font-family: var(--mono);
   font-size: 0.8rem;
   color: var(--accent);
-  background: rgba(100, 244, 196, 0.08);
-  border: 1px solid rgba(100, 244, 196, 0.16);
+  background: var(--line-faint);
+  border: 1px solid var(--line-strong);
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -843,17 +919,17 @@ button {
 .filter-chip {
   min-height: 2.5rem;
   padding: 0.55rem 0.85rem;
-  border: 1px solid rgba(137, 255, 219, 0.12);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(137, 255, 219, 0.04);
+  background: var(--line-faint);
   color: var(--muted);
   cursor: pointer;
 }
 
 .filter-chip:hover,
 .filter-chip.active {
-  border-color: rgba(100, 244, 196, 0.42);
-  background: rgba(100, 244, 196, 0.1);
+  border-color: var(--accent);
+  background: var(--btn-secondary-hover);
   color: var(--text);
 }
 
@@ -867,9 +943,9 @@ button {
 .skill-matrix article {
   min-height: 16rem;
   padding: 1.25rem;
-  border: 1px solid rgba(137, 255, 219, 0.12);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: rgba(6, 16, 13, 0.78);
+  background: var(--panel);
   transition: opacity 160ms ease, transform 160ms ease, border-color 160ms ease;
 }
 
@@ -878,7 +954,7 @@ button {
 }
 
 .skill-matrix article:hover {
-  border-color: rgba(100, 244, 196, 0.3);
+  border-color: var(--card-active-border);
   transform: translateY(-3px);
 }
 
@@ -907,19 +983,19 @@ button {
   position: relative;
   overflow: hidden;
   padding: clamp(1.4rem, 5vw, 4rem);
-  border: 1px solid rgba(137, 255, 219, 0.16);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
   background:
-    radial-gradient(circle at 18% 18%, rgba(100, 244, 196, 0.14), transparent 24rem),
-    radial-gradient(circle at 80% 50%, rgba(125, 211, 252, 0.1), transparent 26rem),
-    linear-gradient(135deg, rgba(10, 24, 20, 0.92), rgba(2, 7, 5, 0.96));
+    radial-gradient(circle at 18% 18%, var(--body-grad-1), transparent 24rem),
+    radial-gradient(circle at 80% 50%, var(--body-grad-2), transparent 26rem),
+    var(--repo-card-bg);
   box-shadow: var(--shadow);
 }
 
 .deploy-card::after {
   position: absolute;
   inset: 1rem;
-  border: 1px solid rgba(137, 255, 219, 0.08);
+  border: 1px solid var(--line-faint);
   border-radius: calc(var(--radius) - 2px);
   content: "";
   pointer-events: none;
@@ -951,9 +1027,9 @@ button {
 
 .contact-strip span {
   padding: 0.55rem 0.7rem;
-  border: 1px solid rgba(137, 255, 219, 0.12);
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(137, 255, 219, 0.04);
+  background: var(--line-faint);
 }
 
 .site-footer {
@@ -1089,7 +1165,7 @@ button {
 
   .project-architecture-mini {
     border-left: none;
-    border-top: 1px solid rgba(137, 255, 219, 0.08);
+    border-top: 1px solid var(--line);
     padding-left: 0;
     padding-top: 2rem;
   }
@@ -1190,4 +1266,51 @@ button {
     opacity: 1;
     transform: none;
   }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  margin-left: 0.5rem;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+  border-color: var(--accent);
+  background: var(--btn-secondary-hover);
+}
+
+.theme-toggle svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+/* Toggle icon visibility based on active theme */
+[data-theme="dark"] .sun-icon {
+  display: block;
+}
+[data-theme="dark"] .moon-icon {
+  display: none;
+}
+.sun-icon {
+  display: none;
+}
+.moon-icon {
+  display: block;
 }
